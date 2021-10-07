@@ -1,4 +1,4 @@
-# DES.-ADM.-DE-APLI.-AVANÇADO
+# DES ADM DE APLI AVANÇADO
 
 <h2 align="center"> Hi there 👋, I´m Junior Ribeiro.</h2>
 ### Des.Adm.de.Apl.Avan
