@@ -7,8 +7,8 @@
 ### Aluno: José Carlos Ribeiro Soares Junior - UNIESP - #JAVA #JAVAWEB #CRUD
 ---
 
-Padrão de arquitetura
-O wikipedia define padrão de arquitetura como: 
+Padrão de arquitetura: 
+ O wikipedia define padrão de arquitetura como: 
 “…uma solução geral e reutilizável para um problema que ocorre com frequência em arquitetura de software dentro de um determinado contexto….”
 
 * Projeto desenvolvido com Springboot usando o https://spring.io/
