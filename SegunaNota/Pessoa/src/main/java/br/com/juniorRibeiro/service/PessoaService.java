@@ -18,10 +18,13 @@ public class PessoaService {
         this.repository = repository;
     }
 
-    public Pessoa salvar(PessoaRequest dto) {
+    public Pessoa salvarPessoa(PessoaRequest dto) {
         return this.repository.save(convertePessoaRequestParaPessoa(dto));
     }
 
+   /*
+   * Retornando uma lista com todos os objetos
+   */
     public List<PessoaResponse> lista(){
         return this.repository.findAll()
                 .stream()
@@ -29,26 +32,30 @@ public class PessoaService {
                 .collect(Collectors.toList());
     }
 
+    /*
+     * Padrão DTO sendo usado para converter pessoaRequet em pessoa
+     */
     private Pessoa convertePessoaRequestParaPessoa(PessoaRequest dto) {
         return Pessoa.builder()
                 .nome(dto.getNome())
                 .email(dto.getEmail())
                 .telefone(dto.getTelefone())
-                .curso(dto.getCurso())
                 .build();
     }
 
+    //Usando o padrão DTO para converter a entidade
     private PessoaResponse convertePessoaResponse(Pessoa pessoa) {
         return PessoaResponse.builder()
                 .id(pessoa.getId())
                 .nome(pessoa.getNome())
                 .email(pessoa.getEmail())
                 .telefone(pessoa.getTelefone())
-                .curso(pessoa.getCurso())
                 .build();
-
     }
 
+    /*
+     * Metodo usado para deletar pelo id.
+     */
     public void deletePessoa(Long id) {
         this.repository.deleteById(id);
     }

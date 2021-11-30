@@ -20,16 +20,18 @@ public class PessoaController {
     }
 
     @PostMapping
-    public ResponseEntity<Pessoa> salvar (@RequestBody PessoaRequest pessoa) {
-        return new ResponseEntity<Pessoa>(this.service.salvar(pessoa), HttpStatus.CREATED);
+    public ResponseEntity<Pessoa> salvarPessoa (@RequestBody PessoaRequest pessoa) {
+        return new ResponseEntity<Pessoa>(this.service.salvarPessoa(pessoa), HttpStatus.CREATED);
     }
 
+    // in class service: method return list with objects json.
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     public ResponseEntity<List<PessoaResponse>> lista(){
         return ResponseEntity.ok(this.service.lista());
     }
 
+    // the method used for delete people, with class service.
     @DeleteMapping
     @ResponseStatus(code = HttpStatus.OK)
     public void deletePessoa(@RequestParam("id") Long id) {
